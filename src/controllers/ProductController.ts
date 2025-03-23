@@ -6,7 +6,7 @@ export class ProductController {
   static async getProducts(req: Request, res: Response) {
     try {
       console.log("🔄 Fetching products from the database...");
-      const products = await AppDataSource.query("SELECT * FROM public.product");
+      const products = await AppDataSource.query("SELECT * FROM product");
       console.log("📝 Query Result:", products);
       res.json(products);
     } catch (error) {
